@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用默认的构造参数-->
+    <bean id="bean1" class="com.springtest.chapter2.helloworld.HelloImpl" ></bean>
+
+    <!--使用有参构造函数-->
+    <bean id="bean2" class="com.springtest.chapter2.helloworld.HelloImpl">
+        <!--指定构造器参数-->
+        <constructor-arg index="0" value="Hello java!"/>
+    </bean>
+
+
+    <!--使用静态工厂方法实例化Bean-->
+    <bean id="bean3" class="com.springtest.chapter2.helloworld.HelloApiStaticFactory" factory-method="newInstance">
+        <constructor-arg index="0" value="Hello xxxx" />
+    </bean>
+
+
+    <!--使用实例工厂实例化Bean-->
+    <!--1.定义实例工厂Bean -->
+    <bean id="beanInstanceFactory" class="com.springtest.chapter2.helloworld.HelloApiInstanceFactory" />
+    <!---2. 使用实例工厂Bean创建 Bean-->
+    <bean id="bean4" factory-bean="beanInstanceFactory" factory-method="newInstance">
+        <constructor-arg index="0" value="Hello 1234567" />
+    </bean>
+</beans>

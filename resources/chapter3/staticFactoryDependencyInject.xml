@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="byIndex" class="com.springtest.chapter3.DependencyInjectByStaticFactory" factory-method="newInstance">
+    <constructor-arg index="0" value="message" />
+    <constructor-arg index="1" value="33"/>
+</bean>
+
+    <bean id="byType" class="com.springtest.chapter3.DependencyInjectByStaticFactory" factory-method="newInstance">
+        <constructor-arg type="java.lang.String" value="type-message" />
+        <constructor-arg type="int" value="11" />
+    </bean>
+
+    <bean id="byName" class="com.springtest.chapter3.DependencyInjectByStaticFactory" factory-method="newInstance">
+        <constructor-arg name="message" value="name-message" />
+        <constructor-arg name="index" value="22" />
+    </bean>
+
+</beans>

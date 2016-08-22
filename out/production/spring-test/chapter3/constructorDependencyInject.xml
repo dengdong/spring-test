@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 通过构造器参数索引方式依赖注入-->
+    <bean id="byIndex" class="com.springtest.chapter3.HelloImpl3">
+        <constructor-arg index="0" value="Hello index" />
+        <constructor-arg index="1" value="1" />
+    </bean>
+
+    <!--通过构造器参数类型依赖注入 -->
+    <bean id="byType" class="com.springtest.chapter3.HelloImpl3">
+        <constructor-arg type="java.lang.String" value="Hello type" />
+        <constructor-arg type="int" value="2" />
+    </bean>
+
+    <!-- 通过构造器参数名称依赖注入 -->
+    <bean id="byName" class="com.springtest.chapter3.HelloImpl3">
+        <constructor-arg name="message" value="Hello name" />
+        <constructor-arg name="index" value="1" />
+    </bean>
+</beans>

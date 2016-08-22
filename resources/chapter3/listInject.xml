@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="listBean" class="com.springtest.chapter3.bean.ListTestBean">
+        <!--- 注入 List -->
+        <property name="values">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+
+        <!--注入 set类型-->
+        <property name="setValues">
+            <set>
+                <value> asdfasdf</value>
+                <value>afsdaaaaaaaaaaaaaaaaa</value>
+            </set>
+        </property>
+
+        <!-- 注入 数组 -->
+        <property name="array">
+            <array>
+                <value>asdfa</value>
+                <value>1111111111111111</value>
+                <value>22222222222</value>
+            </array>
+        </property>
+
+        <!-- 注入 二维数组-->
+        <property name="array1">
+            <array>
+                <array>
+                    <value>0-0</value>
+                    <value>0-1</value>
+                    <value>0-2</value>
+                </array>
+                <array>
+                    <value>1-0</value>
+                    <value>1-1</value>
+                    <value>1-2</value>
+                </array>
+            </array>
+        </property>
+
+        <!--注入 字典 类型-->
+        <property name="maps">
+            <map key-type="java.lang.String" value-type="java.lang.String">
+                <entry>
+                    <key><value>aaaaaaaaaaaaa</value></key>
+                    <value>bbbbb</value>
+                </entry>
+                <entry key="ccccccc" value="ddddddddddddd"/>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="1" >aaaaa</prop>
+                <prop key="2">bbbbbb</prop>
+            </props>
+        </property>
+
+    </bean>
+</beans>
