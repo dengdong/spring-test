@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloApi" class="com.springtest.chapter3.HelloImpl4">
+        <property name="message" value="bbbbbbbbbbb" />
+        <property name="index" value="2" />
+    </bean>
+
+    <!--通过 local 注入-->
+    <bean id="bean1" class="com.springtest.chapter3.HelloApiDecorator">
+        <constructor-arg index="0"><ref bean="helloApi" /></constructor-arg>
+    </bean>
+
+    <!-- 通过parent 注入 -->
+    <bean id="bean2" class="com.springtest.chapter3.HelloApiDecorator">
+        <constructor-arg index="0"><ref parent="helloApi"/> </constructor-arg>
+    </bean>
+
+
+
+</beans>
