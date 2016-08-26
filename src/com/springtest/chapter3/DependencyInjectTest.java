@@ -90,6 +90,8 @@ public class DependencyInjectTest {
         decorator1.sayHello();
     }
 
+    
+
     @Test
     public  void testLocalAndParentBeanInject(){
         ApplicationContext parentContext = new ClassPathXmlApplicationContext("chapter3/parentBeanInject.xml");
